@@ -3,3 +3,111 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+a {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+body {
+    background: #262627;
+    color: #f5f5f5;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.container {
+    width: 1320px;
+    margin: auto;
+
+    @media (max-width: 1399px) {
+        width: 1140px;
+    }
+
+    @media (max-width: 1199px) {
+        width: 960px;
+    }
+
+    @media (max-width: 991px) {
+        width: 720px;
+    }
+
+    @media (max-width: 767px) {
+        width: 540px;
+    }
+
+    @media (max-width: 575px) {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+.header, .footer {
+    background: #202021;
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 660px) {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 20px;
+
+    @media (max-width: 660px) {
+        width: 30%;
+        text-align: center;
+    }
+}
+
+nav ul li a:hover {
+    color: #fbcd20;
+    transition: all 0.5s;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-school-link {
+    width: 150px;
+}
+
+.footer-school-logo path {
+    fill: #f5f5f5;
+    stroke: #f5f5f5;
+}
+
+.footer-school-logo:hover path {
+    fill: #fbcd20;
+    stroke: #fbcd20;
+    transition: all 0.5s;
+}
+
+.footer .course-year {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fbcd20;
+}
+
+.footer-git-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-git-logo path {
+    fill: #f5f5f5;
+}
+
+.footer-git-logo:hover path {
+    fill: #fbcd20;
+    transition: all 0.5s;
+}
