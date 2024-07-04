@@ -2,39 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Alex CV</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Alexey Krivitskiy CV</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
         <nav class="container">
             <ul>
-                <li><a href="">About</a></li>
-                <li><a href="">Contacts</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="">Skills</a></li>
-                <li><a href="">My code</a></li>
-                <li><a href="">Projects</a></li>
+                <li><a href="#code">My code</a></li>
                 <li><a href="">Education</a></li>
             </ul>
         </nav>
     </header>
     <main class="container">
         <section class="main-banner">
-            banner / about me banner
+            <div id="about" class="banner-text-wrapper">
+                <h1>Aleksey Krivitskiy</h1>
+                <h2>Frontend Developer | React</h2>
+            </div>
+            <img class="banner-avatar" src="/img/avatar.jpg" alt="Aleksey Krivitskiy">
+            <div id="contacts" class="banner-contacts-wrapper">
+                <a href="https://t.me/aaleshaa" target="_blank"><h3><span>Telegram: </span>@aaleshaa</h3></a>
+                <a href="mailto: aleksey.krivitskiy2020@gmail.com" target="_blank"><h3><span>Gmail: </span>aleksey.krivitskiy2020@gmail.com</h3></a>
+            </div>
         </section>
-        <section class="contacts">
-            contacts
+        <section id="projects" class="projects">
+            <h2>My Projects</h2>
+            <div class="projects-wrapper">
+                <a href="https://vipvozhdenie.by/" target="_blank">
+                    <div class="project-title">"Империя вождения"</div>
+                    <img src="/img/vipvozhdenie.PNG" alt="Driver school">
+                </a>
+                <a href="https://postavkioptom.by/">
+                    <div class="project-title">"PostavkiOptom"</div>
+                    <img src="/img/postavkioptom.PNG" alt="Postavki optom">
+                </a>
+                <a href="https://tegro.by/">
+                    <div class="project-title">"Tegro"</div>
+                    <img src="/img/tegro.PNG" alt="Tegro">
+                </a>
+            </div>
         </section>
         <section class="skills">
             skills
         </section>
-        <section class="code">
-            my code
+        <section id="code" class="code">
+            <h2>My code</h2>
+            <pre><code>
+useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await axios.post(
+                'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address',
+                { query: address },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Token YOUR_TOKEN'
+                    }
+                }
+            ).then(response => {
+                if(response.data.suggestions.length > 0) {
+                    setSuggestions(response.data.suggestions);
+                }
+            });
+        } catch (error) {
+            console.error('Ошибка при получении подсказок:', error);
+        }
+    }
+
+    if (address !== '') {
+        fetchData();
+    } else {
+        setSuggestions([]);
+    }
+}, [address])
+            </code></pre>
         </section>
-        <section class="projects">
-            projects
-        </section>
+
         <section class="education">
             education
         </section>
